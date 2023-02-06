@@ -1,12 +1,20 @@
 package com.estudandoweb.course.entities;
 
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_user")
 public class User implements Serializable{
 	
-	private static final long serialVersionUID = 1L;
+	//O Serializable serve para que um objeto possa ser transformado em cadeia de bytes, 
+	//assim ele consegue trafegar na rede, ser gravado em arquivos e etc.
 	
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private long id;
 	private String name;
 	private String email;
@@ -67,12 +75,13 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
 
+	//Gerado para pode comparar o id com outro objeto
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -84,5 +93,4 @@ public class User implements Serializable{
 		User other = (User) obj;
 		return id == other.id;
 	}
-	
 }

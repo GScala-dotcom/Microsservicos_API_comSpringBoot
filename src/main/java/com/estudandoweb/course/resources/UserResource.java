@@ -9,7 +9,6 @@ import com.estudandoweb.course.entities.User;
 
 @RestController
 @RequestMapping(value = "/users")
-
 public class UserResource {
 	
 	@GetMapping
@@ -17,5 +16,4 @@ public class UserResource {
 		User u = new User(1L, "Maria", "maria@gmail.com", "9999999", "12345");
 		return ResponseEntity.ok().body(u);
 	}
-	
 }
