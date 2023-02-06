@@ -1,7 +1,10 @@
 package com.estudandoweb.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -20,6 +23,10 @@ public class User implements Serializable{
 	private String email;
 	private String phone;
 	private String password;
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "client")
+	private List<Order> orders = new ArrayList<>();
 	
 	//Construtor vazio devido ao uso de framework no projeto
 	public User() {
@@ -74,6 +81,11 @@ public class User implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	//Para coleções gerar apenas o get
+	public List<Order> getOrders() {
+		return orders;
 	}
 
 	@Override
