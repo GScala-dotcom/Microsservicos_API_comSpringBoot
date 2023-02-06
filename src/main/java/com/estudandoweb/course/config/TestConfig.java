@@ -1,4 +1,5 @@
 package com.estudandoweb.course.config;
+
 import com.estudandoweb.course.entities.User;
 import com.estudandoweb.course.repositories.UserRepository;
 
