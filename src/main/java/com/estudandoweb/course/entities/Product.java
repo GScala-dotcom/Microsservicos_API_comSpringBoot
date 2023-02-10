@@ -22,8 +22,8 @@ public class Product implements Serializable {
     private Double price;
     private String imgUrl;
 
-    //Utilizado para que o Spring nao tente executar o SET.
-    @Transient
+    @ManyToMany
+    @JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
     //Set é uma interface, nao pode ser instanciado, e o HashSet é uma classe correspondente a essa interface
 

@@ -1,5 +1,6 @@
 package com.estudandoweb.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -20,7 +21,8 @@ public class Category implements Serializable {
     private Long id;
     private String name;
 
-    @Transient //Utilizado para que o Spring nao tente executar o SET.
+    @JsonIgnore
+    @ManyToMany(mappedBy = "categories")
     private Set<Product> products = new HashSet<>();
     //Set é uma interface, nao pode ser instanciado, e o HashSet é uma classe correspondente a essa interface
 
