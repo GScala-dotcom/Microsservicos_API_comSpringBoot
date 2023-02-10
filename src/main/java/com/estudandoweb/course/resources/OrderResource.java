@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@RestController //A anotação @RestController permite definir um controller com características REST;
 @RequestMapping(value = "/orders")
+//A anotação @RequestMapping permite definir uma rota. Caso não seja informado o método HTTP da rota, ela será definida para todos os métodos.
 public class OrderResource {
 
+    //A anotação @Autowired delega ao Spring Boot a inicialização do objeto;
     @Autowired
     private OrderService service;
 

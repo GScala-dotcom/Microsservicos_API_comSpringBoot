@@ -12,6 +12,7 @@ import java.util.Optional;
 @Service
 public class OrderService {
 
+    //A anotação @Autowired delega ao Spring Boot a inicialização do objeto;
     @Autowired
     private OrderRepository repository;
 

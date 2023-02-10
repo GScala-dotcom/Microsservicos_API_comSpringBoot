@@ -12,6 +12,7 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
+    //A anotação @Autowired delega ao Spring Boot a inicialização do objeto;
     @Autowired
     private ProductRepository repository;
 

@@ -13,10 +13,12 @@ import com.estudandoweb.course.entities.User;
 
 import java.util.List;
 
-@RestController
+@RestController //A anotação @RestController permite definir um controller com características REST;
 @RequestMapping(value = "/users")
+//A anotação @RequestMapping permite definir uma rota. Caso não seja informado o método HTTP da rota, ela será definida para todos os métodos.
 public class UserResource {
 
+	//A anotação @Autowired delega ao Spring Boot a inicialização do objeto;
 	@Autowired
 	private UserService service;
 

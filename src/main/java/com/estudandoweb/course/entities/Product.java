@@ -11,6 +11,7 @@ import java.util.Set;
 @Table (name = "tb_product")
 public class Product implements Serializable {
 
+    //O Serializable serve para que um objeto possa ser transformado em cadeia de bytes, assim ele consegue trafegar na rede, ser gravado em arquivos e etc.
     public static final long serialVersionUID = 1L;
 
     @Id
@@ -21,11 +22,12 @@ public class Product implements Serializable {
     private Double price;
     private String imgUrl;
 
-    //Set é uma interface, nao pode ser instanciado
-    //O HashSet é uma classe correspondente a essa interface
+    //Utilizado para que o Spring nao tente executar o SET.
     @Transient
     private Set<Category> categories = new HashSet<>();
+    //Set é uma interface, nao pode ser instanciado, e o HashSet é uma classe correspondente a essa interface
 
+    //Construtor vazio obrigatorio devido ao uso de framework no projeto
     public Product() {
     }
 

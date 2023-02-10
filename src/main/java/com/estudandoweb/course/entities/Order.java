@@ -12,6 +12,8 @@ import java.util.Objects;
 @Entity
 @Table(name = "tb_order")
 public class Order implements Serializable {
+
+    //O Serializable serve para que um objeto possa ser transformado em cadeia de bytes, assim ele consegue trafegar na rede, ser gravado em arquivos e etc.
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -27,6 +29,7 @@ public class Order implements Serializable {
     @JoinColumn(name = "client_id")
     private User client;
 
+    //Construtor vazio obrigatorio devido ao uso de framework no projeto
     public Order() {
     }
 

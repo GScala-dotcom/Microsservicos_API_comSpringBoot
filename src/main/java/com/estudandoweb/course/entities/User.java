@@ -11,9 +11,7 @@ import java.util.Objects;
 @Table(name = "tb_user")
 public class User implements Serializable{
 	
-	//O Serializable serve para que um objeto possa ser transformado em cadeia de bytes, 
-	//assim ele consegue trafegar na rede, ser gravado em arquivos e etc.
-	
+	//O Serializable serve para que um objeto possa ser transformado em cadeia de bytes, assim ele consegue trafegar na rede, ser gravado em arquivos e etc.
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -28,7 +26,7 @@ public class User implements Serializable{
 	@OneToMany(mappedBy = "client")
 	private List<Order> orders = new ArrayList<>();
 	
-	//Construtor vazio devido ao uso de framework no projeto
+	//Construtor vazio obrigatorio devido ao uso de framework no projeto
 	public User() {
 		
 	}
